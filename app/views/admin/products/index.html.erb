@@ -19,8 +19,8 @@
               <tr>
                   <td> <%= product.name %>  </td>
                   <td> <%= product.price %> </td>
-                  <td>狀態</td>
-                  <td>處理</td>
+                  <td> <%= online_status(product) %> </td>
+                  <td> <%= link_to '刪除', admin_product_path(product), method: :delete, data:{confirm:'確定嗎?'}, class: 'btn btn-xs btn-danger'%> </td>
               </tr>
               <% end %>
           </tbody>
