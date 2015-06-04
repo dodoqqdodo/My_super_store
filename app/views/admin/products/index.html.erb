@@ -1,0 +1,29 @@
+<h1> 商品列表 </h1>
+
+<%=link_to'新增商品', new_admin_product_path, class: 'btn btn-primary' %>
+<hr />
+<div class="row">
+  <div class="col-md-3"> 分類 </div>
+  <div class="col-md-9">
+      <table class="table">
+          <thead>
+              <tr>
+                  <td>商品名稱</td>
+                  <td>售價</td>
+                  <td>狀態</td>
+                  <td>處理</td>
+              </tr>
+          </thead>
+          <tbody>
+              <% @products.each do |product| %>
+              <tr>
+                  <td> <%= product.name %>  </td>
+                  <td> <%= product.price %> </td>
+                  <td>狀態</td>
+                  <td>處理</td>
+              </tr>
+              <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>
