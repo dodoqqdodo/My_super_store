@@ -24,6 +24,24 @@ class Admin::ProductsController < ApplicationController
         end
     end
     
+    def show
+        @product = Product.find_by(id: params[:id])
+    end
+    
+    def edit
+        @product = Product.find_by(id: params[:id])
+    end
+    
+    def update
+        @product = Product.find_by(id: params[:id])
+        if @product.update_attributes(product_params)
+            redirect_to  admin_products_path, notice:'編輯商品成功'
+        else
+            render :new
+        end
+    end
+    
+    
     def destroy
         @product = Product.find_by(id: params[:id])
         

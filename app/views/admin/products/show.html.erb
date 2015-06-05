@@ -1,0 +1,25 @@
+<h1> 商品名稱：<%= @product.name %> </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> 商品描述 </th>
+            <th> 商品價格 </th>
+            <th> 商品狀態 </th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td> <%= @product.description %> </td>
+            <td> <%= @product.price %> </td>
+            <td> <%= online_status(@product) %> </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+    <%= link_to '編輯商品', edit_admin_product_path(@product), class: 'btn btn-warning' %>
+    <%= link_to '返回商品列表', admin_products_path, class: 'btn btn-success' %>
+    
+    
+

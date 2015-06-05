@@ -1,11 +1,6 @@
 <h1> 新增商品 </h1>
+<br>
+<%=render 'form' %>
+<br>
+<%=link_to '返回商品列表', admin_products_path, class:'btn btn-success' %>
 
-<%=simple_form_for([:admin, @product]) do |f| %>
-
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.input :is_online %>
-<%= f.submit class:'btn btn-primary' %>
-
-<% end %>

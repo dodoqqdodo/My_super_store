@@ -1,0 +1,11 @@
+<%=simple_form_for([:admin, @product]) do |f| %>
+
+  <%= f.input :name, label:false, placeholder:'商品名稱' %>
+  <%= f.input :description,label:false, placeholder:'商品描述' %>
+  <%= f.input :price, label:false, placeholder:'商品價錢' %>
+  <%= f.input :is_online %>
+
+  
+  <%= f.submit %>
+ 
+<% end %>
