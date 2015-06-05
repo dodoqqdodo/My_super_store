@@ -1,0 +1,15 @@
+defaults: &defaults
+  Facebook:
+    APP_ID: seret
+    APP_SECRET:seret
+
+
+development:
+  <<: *defaults
+  neat_setting: 800
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

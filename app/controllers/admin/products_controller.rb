@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
     
     layout 'admin'
+    before_action :authenticate_user! #幫後台做些管理權限 devise 套件送的方法 一定要登入 才能進入後台
     
     def index
         #@products = Product.page(params[:page]).per(10).where(is_deleted:false) #因為有裝KAMINAMI,直接用分頁功能
