@@ -31,12 +31,23 @@ class CartTest < ActiveSupport::TestCase
     cart.add_item(p1.id)
   
     assert_kind_of Product, cart.items.first.product
-    assert_equal "Ruby Book", cart.items.first.name
+    assert_equal 'Ruby Book', cart.items.first.product.name
   end
     
+  test "can calculate totla price" do
+    cart =Cart.new
+    p1= Product.create(name:'ruby', price:100)
+    p2= Product.create(name:'php', price:50)
     
+    5.times do
+      cart.add_item(p1.id)
+    end
     
+    3.times do
+      cart.add_item(p2.id)
+    end
     
-  
-  
+    assert_equal 650, cart.total_price
+    
+  end
 end

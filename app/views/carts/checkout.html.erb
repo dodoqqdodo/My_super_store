@@ -1,0 +1,33 @@
+<%= content_for :head_js do %>
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<% end %>
+
+<h1> 結帳 </h1>
+
+<%=render 'carts/cart_table' %>
+<hr />
+
+ <%= simple_form_for(@order) do |f| %>
+    <%= f.input :recipient, label:false, placeholder:'收件者' %>
+    <%= f.input :address, label:false, placeholder:'收件地址' %>
+    <%= f.input :tel, label:false, placeholder:'聯絡電話' %>
+    <%= f.input :email, label:false, placeholder:'聯絡信箱' %>
+    <%= f.input :will_receive_edm, label:'是否願意收到優惠方案' %>
+    <hr />
+    <div id="dropin"></div>
+    <hr />
+    <%= f.submit class:'btn btn-danger'%>
+ <% end %>
+ 
+
+
+<script>
+// We generated a client token for you so you can copy and paste this code
+// and try it out right away. See the section below to generate your
+// own client token.
+var clientToken = "<%= @token %>"
+
+braintree.setup(clientToken, "dropin", {
+  container: "dropin"
+});
+</script>

@@ -4,8 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
+#one: {}
+# column: value  #使用devise有錯誤 的話 先關掉
 #
-two: {}
-#  column: value
+#two: {}
+#  column: value #使用devise有錯誤 的話 先關掉

@@ -22,6 +22,8 @@ gem 'cocoon'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'cancancan'
+gem "braintree" 
+gem "state_machine"
 
 # file upload
 gem 'carrierwave'

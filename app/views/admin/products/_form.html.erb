@@ -6,6 +6,6 @@
   <%= f.input :is_online %>
 
   
-  <%= f.submit %>
+  <%= f.submit @product.new_record? ? "新增商品" : "編輯商品", class:'btn btn-danger' %>
  
 <% end %>

@@ -1,5 +1,6 @@
 <h1> 商品列表 </h1>
 
+
 <table class="table">
           <thead>
               <tr>
@@ -13,9 +14,7 @@
               <tr>
                 <td> <%= product.name %>  </td>
                 <td> <%= product.price %> </td>
-                <td> 放入購物車 </td>
-              
-                
+                <td> <%=link_to '放入購物車', add_cart_path(product.id), class:'btn btn-xs btn-danger', method: :post %></td>
               </tr>
               <% end %>
           </tbody>
